@@ -20,13 +20,15 @@ gridElements.forEach((el) => {
 })
 
 function getRandomColor(){
-    let range = "012345679ABCDEF"
-    let color = [];
+    let range = "0123456789ABCDEF";
+    let color = new Array(6);
     for(let i = 0; i<6; i++){
-        console.log(Math.floor(Math.random() * 16));
-        console.log(range.at(Math.floor(Math.random() * 16)));
-        color.push(range.at(Math.floor(Math.random() * 16)));
+        let random = Math.floor(Math.random() * 16);
+        console.log("random number: "+ random);
+        console.log("random color: "+range.at(random));
+        color.push(range.at(random));
     }
     console.log("#" + color.join(""));
-    return "#" + color.join("");
+
+    return "#" + color.join("");;
 }
