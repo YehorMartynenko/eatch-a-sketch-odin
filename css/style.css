@@ -18,15 +18,13 @@
 
 .row {
     background-color: blue;
-    flex-grow: 1;
+    flex: 1;
     display: flex;
 }
 
 .gridElement {
     background-color: blue;
     border: 0.5px solid black;
-    flex-grow: 1;
-    height: 30px;
-    width: 30px;
+    flex: 1;
 }
 
