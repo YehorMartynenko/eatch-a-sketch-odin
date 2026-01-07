@@ -69,3 +69,9 @@ blackColorBtn.addEventListener("click", () => {
     colorMode = "black";
     setDrawMode(colorMode);
 })
+
+const resetBtn = document.querySelector("#reset");
+resetBtn.addEventListener("click", () => {
+    drawGrid(gridSize);
+    setDrawMode(colorMode);
+});

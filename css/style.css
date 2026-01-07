@@ -39,4 +39,10 @@ button {
     margin: 10px 0;
     padding: 10px;
     border: 1px solid black;
+    width: 110px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: lightgray;
 }
