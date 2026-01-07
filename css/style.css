@@ -26,3 +26,14 @@
     flex: 1;
 }
 
+#controls{
+    display: flex;
+    width: 480px;
+    justify-content: center;
+}
+
+button {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
