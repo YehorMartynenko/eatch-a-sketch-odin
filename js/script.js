@@ -1,5 +1,6 @@
 const container = document.querySelector("#container");
 let gridSize = 16;
+let colorMode = "black";
 
 function drawGrid(size){
     while(container.firstChild){
@@ -18,7 +19,7 @@ function drawGrid(size){
 }
 
 drawGrid(gridSize);
-setDrawMode();
+setDrawMode(colorMode);
 
 const sizeSelector = document.querySelector("#size");
 sizeSelector.addEventListener("click", function(e){
@@ -26,15 +27,19 @@ sizeSelector.addEventListener("click", function(e){
     if(gridSize<4) gridSize=4;
     if(gridSize>100) gridSize=100;
     drawGrid(gridSize);
-    setDrawMode();
+    setDrawMode(colorMode);
 });
 
-function setDrawMode() {
+function setDrawMode(mode) {
     const gridElements = document.querySelectorAll(".gridElement");
-    console.log(gridElements);
     gridElements.forEach((el) => {
         el.addEventListener("mouseenter", function(e) {
-            this.style.backgroundColor = getRandomColor();
+            if(mode == "random"){
+                this.style.backgroundColor = getRandomColor();
+            } else if (mode =="black"){
+                this.style.opacity=Number(this.style.opacity) + 0.1;
+                this.style.backgroundColor = "black";
+            }
         })
     })
 }
@@ -52,3 +57,15 @@ function getRandomColor(){
 
     return "#" + color.join("");
 }
+
+const randomColorBtn = document.querySelector("#randomColor");
+randomColorBtn.addEventListener("click", () => {
+    colorMode = "random";
+    setDrawMode(colorMode);
+})
+
+const blackColorBtn = document.querySelector("#blackColor");
+blackColorBtn.addEventListener("click", () => {
+    colorMode = "black";
+    setDrawMode(colorMode);
+})

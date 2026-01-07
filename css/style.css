@@ -32,11 +32,11 @@
 #controls{
     display: flex;
     width: 480px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 button {
-    margin: 10px;
+    margin: 10px 0;
     padding: 10px;
     border: 1px solid black;
 }
